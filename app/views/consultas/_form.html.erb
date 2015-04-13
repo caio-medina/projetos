@@ -1,0 +1,37 @@
+<%= form_for(@consulta) do |f| %>
+  <% if @consulta.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@consulta.errors.count, "error") %> prohibited this consulta from being saved:</h2>
+
+      <ul>
+      <% @consulta.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<table>
+  <tr>
+  <div class="field">
+  <td><%= f.label :data %>
+    <%= f.text_field :data %><td>
+  </div>
+  <div class="field">
+  <td><%= f.label :disponivel %>
+    <%= f.text_field :disponivel %></td>
+  </div>
+  <div class="field">
+  <td><%= f.label :medico %>
+    <%= f.collection_select( :medico, Medico.all, :id, :nome, prompt: true) %></td>
+  </div>
+  <div class="field">
+  <td><%= f.label :paciente %>
+    <%= f.collection_select( :paciente, Paciente.all, :id, :nome, prompt: true) %></td>
+  </div>
+  </tr>
+</table>
+  <div class="form-actions">
+    <%= f.submit 'Salvar' %>
+  </div>
+<% end %>
+

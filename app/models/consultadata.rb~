@@ -1,0 +1,2 @@
+class Consultadata < ActiveRecord::Base
+end

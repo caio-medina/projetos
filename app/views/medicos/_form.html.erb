@@ -1,0 +1,38 @@
+<%= form_for(@medico) do |f| %>
+  <% if @medico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@medico.errors.count, "error") %> prohibited this medico from being saved:</h2>
+
+      <ul>
+      <% @medico.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<table>
+    <tr>
+  <div class="field">
+    <td><%= f.label :nome %>
+    <%= f.text_field :nome %></td>
+  </div>
+  <div class="field">
+    <td><%= f.label :endereco %>
+    <%= f.text_field :endereco %></td>
+  </div>
+  <div class="field">
+    <td><%= f.label :telefone %>
+    <%= f.text_field :telefone %></td>
+  </div>
+  <div class="field">
+    <td><%= f.label :formacao %>
+    <%= f.text_field :formacao %></td>
+  </div>
+  </tr>
+</table>
+  <div class="form-actions">
+    <%= f.submit 'Salvar' %>
+  </div>
+<% end %>
+

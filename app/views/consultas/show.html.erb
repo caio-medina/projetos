@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @consulta.data %>
+</p>
+
+<p>
+  <strong>Disponivel:</strong>
+  <%= @consulta.disponivel %>
+</p>
+
+
+<%= link_to 'Editar', edit_consulta_path(@consulta) %> |
+<%= link_to 'Voltar', consultas_path %>
